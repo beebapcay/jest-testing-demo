@@ -13,9 +13,6 @@ exports.fetchDataPromise = () => {
 };
 
 exports.fetchDataAwait = async () => {
-  await Promise((resolve, reject) => {
-    setTimeout(() => {
-      return 'hello world';
-    }, 1000);
-  });
+  const data = await this.fetchDataPromise();
+  return data;
 };
